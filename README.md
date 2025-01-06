@@ -1,10 +1,3 @@
-<html>
-<head>
-<style>
-h2{text-align: center;}
-</style>
-</head>
-<body>
 
 <h2>ANGULAR</h2>
 JavaScript temelli SPA(Single Page Application) oluşturmak için tasarlanmış bir Web Uygulama Geliştirme Mimarisidir.
@@ -22,7 +15,14 @@ npm install -g @angular/cli
 ```
 Geliştirirken Javascript i konsept olarak alan, daha hızlı ve OOP (Object Orianted Programming) den faydalanarak geliştirmeyi sağlayan **TypeScript** kullanılabilir.
 Derlendiğinde JavaScript çıktısı verecektir.
+<br>
+**Angular cli ile temel komutlar;**
 
+* ng version: Angular versiyon bilgisini verir.
+* ng new: Yeni temel bir Angular uygulaması oluşturur.
+* ng generate: Angular yapı taşlarının üretilmesini sağlar.
+* ng serve: Angular uygulamasının ayağa kaldırılmasını sağlar.
+* ng build: Angular uygulamasının build edilmesini sağlar.
 
 
 </body>
