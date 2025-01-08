@@ -117,5 +117,58 @@ Veriler üzerinde görsel işlemler yapılmasında kullanılır.
 <br>
 
 <h3>DATA BINDING</h3>
+Component Class yapısı ile HTML yapısınının birbirine bağlanması ve işlemler yürütülmesi.
+Değişiklikler 2 taraf içinde dinamik şekilde anlık aktarılacaktır..
+<br>
+<br>
 
+* **Text Interpolation**
+En temel binding yöntemidir.
+**{{}}** operatörü ile kullanlır.
 
+<br>
+
+* **Property Binding**
+Component Classda tanımlı verilerin property olarak template içerisine bağlnamasını sağlar.
+
+```ts
+itemImageUrl = '../assets/image.png';
+<img alt="item" [src]="itemImageUrl">
+```
+
+<br>
+
+* **Two Way Data Binding**
+Template içerisindeki HTML nesnesinde değişiklik olduğunda, bind edilmiş component class member'larının değerleri anlık olarak değişecektir. Tam tersi durumda geçerlidir. Bind işlemini gerçekleştirmek için input nesnelerinde **[(ngModel)]** direktifi kullanılır.
+Genellikle form nesnelerinde kullanılır.
+
+```ts
+template: `
+    <input type = "text" [(ngModel)] = "name">
+`
+export class MyComponent
+{
+    name: string;
+}
+```
+<br>
+
+* **Event Binding**
+Template içerisindeki nesnenin component class da tanımı olan fonksiyona event olarak bağlanmasıdır.
+(event) olarak belirtilebilir 
+
+```ts
+template: `
+    <button (click) = "butonClick()">Click</button>
+
+    <button on-click = "butonClick()">Click</button>
+`
+export class MyComponent
+{
+    butonClick(){};
+}
+```
+<br>
+
+* **Attribute binding**
+Html elemanları attribute'larına değerleri component classdan verilmesini sağlar.
