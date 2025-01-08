@@ -1,7 +1,13 @@
 
-<h2>ANGULAR</h2>
-JavaScript temelli SPA(Single Page Application) oluşturmak için tasarlanmış bir Web Uygulama Geliştirme Mimarisidir.
-<br>
+<div style="text-align: center;">
+<img src="/ReadmeImages/ang2.png" alt="Alt Text" style="width:85%; height:auto;" class = "center">
+</div>
+<br><br>
+
+<p>JavaScript temelli SPA(Single Page Application) oluşturmak için tasarlanmış bir Web Uygulama Geliştirme Mimarisidir.<p>
+
+
+
 
 <h4>SPA Nedir?</h4>
 Bir Web Uygulamasının tek bir sayfa ile tüm işlevselliğin yürütüldüğü tasarımdır. Main sayfanın yüklenmesiyle tüm bileşenler tarayıcı üzerine yüklenmektedir. Bu durum sayfa geçişlerinde hız ve performans sağlayacaktır.
@@ -49,6 +55,7 @@ Html nesnelerin görüntüsünü ve davranışlarını yönetebilmeyi sağlar.
 <br>
 
 * **DIRECTIVES**
+
 Decarator sayesinde class memberlarına  metadata eklenebilir ve davranışları nitelendirilir.
 <br>
 
@@ -69,5 +76,10 @@ Route erişimlerinin izin kontrolleri Guard yapılanması ile gerçekleştirilir
 Veriler üzerinde görsel işlemler yapılmasında kullanılır.
 
 
+<h3>COMPONENTS</h3>
 
+* Sayfalar componentler ile tasarlanır.
+* Bir componentin alt componenti olabilir ve partial mantığında geliştirilir.
+* Componentler ile sayfalar kullanıcıya sunulur.
+* 
 
