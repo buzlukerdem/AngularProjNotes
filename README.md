@@ -172,3 +172,17 @@ export class MyComponent
 
 * **Attribute binding**
 Html elemanları attribute'larına değerleri component classdan verilmesini sağlar.
+<br>
+
+<h4>INTERPOLATION SYNTAX</h4>
+Herhangi bir field ya da propert değerininin {{}} operatörü ile html içerisinde bind edilmesidir. 
+<br>
+Uygulamanın state'ini değiştirebilecek bir işlem gerçekleştirilemez.
+State de değişiklik gerçekleştirebilecek operatörler veya keywordler kullanılamaz.
+<br>
+Örnek operatörler-keywordler: =, ++, +=, ;, new, typeof vs.
+
+<br>
+Script, html kodları handle edilmeden en sade haliyle yansıtılırlar.
+
+
