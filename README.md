@@ -81,5 +81,41 @@ Veriler üzerinde görsel işlemler yapılmasında kullanılır.
 * Sayfalar componentler ile tasarlanır.
 * Bir componentin alt componenti olabilir ve partial mantığında geliştirilir.
 * Componentler ile sayfalar kullanıcıya sunulur.
-* 
+* Iç içe componentler birbirinden bağımsız çalışır parça bütün ilişkisini sağlar.
+* Componentler birbiryleriyle iletişim kurabilir.
+
+<br>
+
+**Template**
+
+* Component'in görsel çalışmaları template parçasında yapılır.
+* Component'in **app.component.html** dosyası template kısmıdır.
+* **templateUrl** field'ı ile ilişkilendirme gerçekleştirilir.
+* İçerisinde html kodu ile directive - pipe - databinding elemanlarını kullanabilmektedir.
+* TemplateUrl yerine template field'ı üzerinden görsel çalışmalar ts dosyasında gerçekleştirilebilir.
+
+<br>
+
+**Style**
+* Component'in css-scss vs.  çalışmaları style parçasında yapılır.
+* Component'in **app.component.scss** dosyası style kısmıdır.
+* **styleUrls** field'ı ile ilişkilendirme gerçekleştirilir.
+* styles field'ı kullanılarak css tanımlamaları ts dosyasında gerçekleştirilebilir.
+
+<br>
+
+**Component Class**
+* .ts uzantılı ana merkezi dosyadır.
+* JavaScript-TypeScript-JQuery işlemleri bu parça da gerçekleştirilir. Değişkenler ile fonksiyonlar component class içerisinde tanımlanır.
+* İş mantığı barındıran servisler Component Class üzerinden çağırılar.
+* API dış servislere erişimin başlatılması bu sınıfın sorumluluğudur.
+<br>
+
+**Selector**
+* HTML dosyalarında kullanılırlar.
+* Kullanılacak component'in uygulamanın herhangi bir noktasında çağıracak/referans edecek Selector özelliğidir.
+<br>
+
+<h3>DATA BINDING</h3>
+
 
