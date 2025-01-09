@@ -139,7 +139,8 @@ itemImageUrl = '../assets/image.png';
 <br>
 
 * **Two Way Data Binding**
-Template içerisindeki HTML nesnesinde değişiklik olduğunda, bind edilmiş component class member'larının değerleri anlık olarak değişecektir. Tam tersi durumda geçerlidir. Bind işlemini gerçekleştirmek için input nesnelerinde **[(ngModel)]** direktifi kullanılır.
+Template içerisindeki HTML nesnesinde değişiklik olduğunda, bind edilmiş component class member'larının değerleri anlık olarak değişecektir. Tam tersi durumda geçerlidir. Bind işlemini gerçekleştirmek için input nesnelerinde <a id="ngModel">**[(ngModel)]**</a>
+direktifi kullanılır.
 Genellikle form nesnelerinde kullanılır.
 
 ```ts
@@ -185,4 +186,58 @@ State de değişiklik gerçekleştirebilecek operatörler veya keywordler kullan
 <br>
 Script, html kodları handle edilmeden en sade haliyle yansıtılırlar.
 
+<br><br>
+
+<h4>DIRECTIVES</h4>
+Html elemanlarına ekstra özellik ve davranış eklemeyi sağlar.
+Directive selector'u ile bu davranış kazandırılır.<br>
+<br>
+
+**Built-in Directives**
+
+* **ngFor Directive**: Html nesneleri üzerinde iterasyonel çalışmalar yapmak için kullanılır.
+
+```html
+template: `
+<div *ngFor = "let name of names">{{name}}</div>
+`
+```
+
+```ts
+export class MyComponent
+{
+    names: string[] = ["My1", "My2", "My3"]
+}
+```
+<br>
+
+* **ngIf Directive**: Html nesnelerin görünürlüğünü ayarlamak için kullanılır.
+```html
+template: `
+<div *ngIf="false">Message</div>
+`
+```
+<br>
+
+* **ngSwitch Directive**: Html nesnelerin görünürlüğünü ve içeriğini değiştirmek belirli şartlara göre şekillendirmek için kullanılır. **ngSwitchCase** ile şart kontrolü yapılır. **ngSwtichDefault** ile de şarta uygun bir case yok ise default tetiklenecektir.
+```html
+template: `
+<div [ngSwitch]="3">
+    <div *ngSwitchCase="1">Value-1</div>
+    <div *ngSwitchCase="2">Value-2</div>
+    <div *ngSwitchDefault=>Default Value</div>
+</div>
+`
+```
+<br>
+
+* **ngClass Directive**: ngClass ile Html etiketlerinin class değereri dinamik olarak yönetilebilir.
+
+<br>
+
+* **ngStyle Directive**: ngStyle ile Html etiketlerinin style değerlerinin dinamik olarak yönetilmesini sağlar.
+
+<br>
+
+<a href="#ngModel">**ngModel Directive:**</a> Two data binding de kullanılır.
 
