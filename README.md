@@ -239,5 +239,80 @@ template: `
 
 <br>
 
-<a href="#ngModel">**ngModel Directive:**</a> Two data binding de kullanılır.
+* <a href="#ngModel">**ngModel Directive:**</a> Two data binding de kullanılır.
 
+<br>
+
+
+<h4>CUSTOM DIRECTIVE</h4>
+Custom directive'ler oluşturarak HTML nesnelerine kendi isteğimize,  yapacağımız işlemlere göre berlirli davranışlar kazandırabiliriz. 
+<br>
+Directive oluşturma talimatı;
+
+```
+ng g(generate) d(directive) fileName/directiveName
+```
+
+<br>
+Directive class'lar @Directive decorator ile işaretlenir.
+
+**Selector** ile directive uygulama seviyesinde kullanabilmeyi sağlayan referanstır. 
+
+<br>
+Directive ile işaretlenmiş HTML nesnesi, directive class'ının ctor parametresinde temsil edilip işlemler gerçekleştirilir.
+
+```ts
+export class TestDirective {
+
+  constructor(private element:ElementRef) { }
+
+}
+```
+<br>
+
+Kullanılan directive'e parametre tanımlanarak davranışı yönetilebilir.
+
+<br>
+
+**@HostListener**: oluşturulan directive'in hangi event ile nitelendirileceğini belirtmeyi sağlayan bir decoratordur.
+
+<br>
+
+**@HostBinding**: Directive'in işaretlediği html nesnesinin bir özelliğine bind ederek işlemler gerçekleştirilebilir.
+
+```ts
+export class TestDirective {
+
+  constructor() { }
+
+  @HostListener("click")
+  onClickk(){alert("click edildi...")}
+
+  @HostBinding("style.color")
+  writingcolorr: string = "blue";
+
+}
+```
+
+<h4>STRUCTURAL DIRECTIVE</h4>
+HTML nesnesini ve DOM yapısını fiziksel/yapısal olarak değişikliğe tabi tutmayı sağlar.
+
+* Davranışlarını setter propertyler ile belirlerler. Setter property adı selector referans adıyla aynı olmak zorundadır.
+
+<br>
+2 modül vardır;
+<br><br>
+
+* **TemplateRef**: HTML nesnesini manipüle ederek yapısal değişiklik yapılacaksa bu html nesnesi TemplateRef ile refererans edilir.
+* **ViewContainerRef**: Container referansı ile template'in içeriği referans edilir. Bu container içerisinde dinamik şekilde html elemanlarını eklemeye çıkarmaya yarar.
+Bir component'inde dinamik şekilde yüklenmesini sağlar.
+
+<br>
+Oluşturulan directive classında ctor içerisinde templateRef ve viewContainerRef referansları tanımlanır.
+
+```ts
+  constructor(
+    private templateRef: TemplateRef<any>,
+    private viewContainerRef: ViewContainerRef
+  ) { }
+  ```
