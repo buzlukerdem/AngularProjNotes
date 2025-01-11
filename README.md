@@ -392,4 +392,7 @@ Componentler arasında veri ve olaylarda iletişim.
 <br><br>
 
 **Parent to Child Communication**
-Parent component den child component e veri göndermek için kullanılır.
+Parent component den child component e veri göndermek için kullanılır. Child Component'de dışarıdan alınacak veri @Input() ile işaretlenir.
+
+**Child to Parent Communication**
+Child component den parent component e veri göndermek için kullanılır. Parent'a gönderilecek veri @Output ile işaretlenir ve EventEmitter ile bir event ile veriyi gönderir.
