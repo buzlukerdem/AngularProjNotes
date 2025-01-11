@@ -382,7 +382,7 @@ export class TestPipe implements PipeTransform {
 ```
 
 * Custom pipe **PipeTransform interface**'i tarafından implement edilmelidir.
-* Implement neticesinde gelen **Transform metodu** ile yapılandırlamalar ihtiyaca göre oluşturulabilir.
+* Implement neticesinde gelen **Transform metotu** ile yapılandırlamalar ihtiyaca göre oluşturulabilir.
 * Custom oluşturulan pipe, Component ve Service içerisinde instance olarak kullanılabilmektedir.
 <br>
 
@@ -395,4 +395,106 @@ Componentler arasında veri ve olaylarda iletişim.
 Parent component den child component e veri göndermek için kullanılır. Child Component'de dışarıdan alınacak veri @Input() ile işaretlenir.
 
 **Child to Parent Communication**
-Child component den parent component e veri göndermek için kullanılır. Parent'a gönderilecek veri @Output ile işaretlenir ve EventEmitter ile bir event ile veriyi gönderir.
+Child component den parent component e veri göndermek için kullanılır. Parent'a gönderilecek veri @Output ile işaretlenir ve EventEmitter ile bir event ile veriyi gönderir.<br>
+<br>
+
+#### Component Life Cycle
+Angular componentinin ilk oluştuğu andan imha edileceği ana kadar ki süreçte belirli noktalarda çalışacak davranışsal metot lar vardır.
+Bu metotlar componentin farklı aşamalarında çalışırlar ve birbirlerinden farklı görevleri yerine getirirler. Bu metotlar kendi interfaceleri tarafından component class'a implement edilerek kullanılabilirler.
+
+* **ngOnChanges**: Component'in input değişkenleri selector referansı üzerinden değişikliliğe uğrarsa OnChanges metotu tetiklenir.
+
+```ts
+export class TestingComponent implements OnChanges{
+  ngOnChanges(): void {
+  console.log("OnChanges triggered...");
+  }
+}
+```
+<br>
+
+* **ngOnInit**: Component'in sayfaya ilk kez oluşturulduğu/yüklendiği an tetiklenir.
+
+```ts
+export class TestingComponent implements OnInit{
+  ngOnInit(): void {
+  console.log("ngOnInit triggered...");
+  }
+}
+```
+
+<br>
+
+* **ngDoCheck**: Component'in güncellenmesi durumunda, Component classta veya componentin template'inde görsel değişiklik olduğunda tetiklenir.
+
+```ts
+export class TestingComponent implements DoCheck{
+  ngDoCheck(): void {
+  console.log("ngDoCheck triggered...");
+  }
+}
+```
+
+<br>
+
+* **ngAfterContentInit**: Componentin içeriği ilk kez oluşturulduğunda tetiklenir.
+
+```ts
+export class TestingComponent implements AfterContentInit{
+  ngAfterContentInit(): void {
+  console.log("ngAfterContentInit triggered...");
+  }
+}
+```
+
+<br>
+
+* **ngAfterContentChecked**: Component'in içeriği güncellendiği zaman tetiklenir. DoCheck metotu angAfterContentChecked metotunu da kapsar.
+
+```ts
+export class TestingComponent implements AfterContentChecked{
+  ngAfterContentChecked(): void {
+  console.log("ngAfterContentChecked triggered...");
+  }
+}
+```
+
+<br>
+
+* **ngAfterViewInit**: Component'in view'ı ilk kez oluşturulduğunda tetiklenir.
+
+```ts
+export class TestingComponent implements AfterViewInit{
+  ngAfterViewInit(): void {
+  console.log("ngAfterViewInit triggered...");
+  }
+}
+```
+
+<br>
+
+* **ngAfterViewChecked**: Component'in view'ı her güncellendiğinde/değişiklik olduğunda tetiklenir.
+
+```ts
+export class TestingComponent implements AfterViewChecked{
+  ngAfterViewChecked(): void {
+  console.log("ngAfterViewChecked triggered...");
+  }
+}
+```
+
+<br>
+
+* **ngOnDestroy**: Component'in imha edilmesi/silinmesi durumunda tetiklenir.
+
+```ts
+export class TestingComponent implements OnDestroy{
+  ngOnDestroy(): void {
+  console.log("ngOnDestroy triggered...BYE");
+  }
+}
+```
+<br>
+
+.
+

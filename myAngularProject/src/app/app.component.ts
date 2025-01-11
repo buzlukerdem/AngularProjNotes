@@ -11,6 +11,7 @@ import { Component } from '@angular/core';
   <!-- <div *appTest="array, let harf; let i = index">{{harf}} - {{i}}</div> -->
   <!-- <div *ngFor="let name of names | keyvalue ">{{name.key}} - {{name.value}}</div> -->
   <!-- <app-parent></app-parent> -->
+   <app-testing data="input">content deger</app-testing>
   `,
   standalone: false,
   styleUrl: './app.component.scss'
