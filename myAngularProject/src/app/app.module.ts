@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { TestingComponent } from './testing/testing.component';
 import { TestDirective } from './directives/test.directive';
 import { TestPipe } from './pipes/test.pipe';
+import { ParentComponent } from './components/parent/parent.component';
+import { ChildComponent } from './components/child/child.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +15,8 @@ import { TestPipe } from './pipes/test.pipe';
     TestingComponent,
     TestDirective,
     TestPipe,
+    ParentComponent,
+    ChildComponent,
   ],
   imports: [
     BrowserModule,

@@ -384,3 +384,12 @@ export class TestPipe implements PipeTransform {
 * Custom pipe **PipeTransform interface**'i tarafından implement edilmelidir.
 * Implement neticesinde gelen **Transform metodu** ile yapılandırlamalar ihtiyaca göre oluşturulabilir.
 * Custom oluşturulan pipe, Component ve Service içerisinde instance olarak kullanılabilmektedir.
+<br>
+
+
+<h4>Component Communication</h4>
+Componentler arasında veri ve olaylarda iletişim.
+<br><br>
+
+**Parent to Child Communication**
+Parent component den child component e veri göndermek için kullanılır.
