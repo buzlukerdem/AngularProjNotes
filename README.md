@@ -54,8 +54,7 @@ Html nesnelerin görüntüsünü ve davranışlarını yönetebilmeyi sağlar.
 Özel bir etikettir.
 <br>
 
-* **DIRECTIVES**
-
+* **DECORATOR**
 Decarator sayesinde class memberlarına  metadata eklenebilir ve davranışları nitelendirilir.
 <br>
 
@@ -316,3 +315,72 @@ Oluşturulan directive classında ctor içerisinde templateRef ve viewContainerR
     private viewContainerRef: ViewContainerRef
   ) { }
   ```
+<br>
+
+<h4>PIPES</h4>
+Verinin html de gösterilirken görüntülenme şeklinde değişiklik için kullanılır.
+<br>
+<br>
+
+Built-in olarak birçok pipe vardır.
+
+* **Date Pipe**: Tarihsel verilerin biçimlendirilmesini sağlar.
+```ts
+{{'09.05.1998' | date}}
+```
+<br>
+
+* **Currency Pipe**: Sayısal değerleri parasal formatta sembol ile göstermeyi sağlar.
+```ts
+{{999 | currency: '₺'}}
+```
+<br>
+
+* **Slice Pipe**: Dizilerde verilerin belirli aralıklarda dilimlenmesini/ayrılmasını sağlar.
+```ts
+{{name | slice: 2:5}}
+```
+<br>
+
+* **Json Pipe**: Bir nesneyi JSON formatına dönüştürmeyi sağlar.
+```ts
+{{object | json}}
+```
+<br>
+
+* **UPPER-lower case Pipe**: Metinsel değelerin tüm harflerini büyük-küçük harflere dönüştürmeyi sağlar.
+```ts
+{{'deneme123' | uppercase-lowercase}}
+```
+<br>
+
+* **TitleCase Pipe**: Bir cümlenin her kelimesinin ilk harfini büyütmeyi sağlar.
+```ts
+{{'test deneme td123' | titlecase}}
+```
+<br>
+
+* **KeyValue Pipe**: KeyValue formatında koleksiyonu key ve valueleri ile elde etmeyi sağlar.
+```ts
+<div *ngFor="let c of col | keyvalue">{{c.key}} - {{c.value}}</div>
+```
+
+<br>
+
+##### Custom Pipes
+Custom pipe oluşturma talimatı;
+```
+ng g p pipes/pipeName
+```
+```ts
+export class TestPipe implements PipeTransform {
+
+  transform(value: unknown, ...args: unknown[]): unknown {
+    return null;
+  }
+}
+```
+
+* Custom pipe **PipeTransform interface**'i tarafından implement edilmelidir.
+* Implement neticesinde gelen **Transform metodu** ile yapılandırlamalar ihtiyaca göre oluşturulabilir.
+* Custom oluşturulan pipe, Component ve Service içerisinde instance olarak kullanılabilmektedir.

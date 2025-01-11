@@ -9,6 +9,7 @@ import { Component } from '@angular/core';
    <!-- <div *appTest="6">AAA</div> -->
   <!-- <div *appTest="5, let i;">Erdem {{i}}</div> -->
   <!-- <div *appTest="array, let harf; let i = index">{{harf}} - {{i}}</div> -->
+  <div *ngFor="let name of names | keyvalue ">{{name.key}} - {{name.value}}</div>
   `,
   standalone: false,
   styleUrl: './app.component.scss'
@@ -16,4 +17,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'myAngularProject';
   // array: string[] = ["A1","B1","C1","D1"]
+  names: Map<number, string> = new Map([[1, 'Erdem'], [2, 'Berkay'], [3, "Demet"]])
 }
