@@ -496,5 +496,21 @@ export class TestingComponent implements OnDestroy{
 ```
 <br>
 
-.
 
+<br>
+
+#### Angular Forms
+Kullanıcılardan veri alabilmek, verisel iletişime girebilmek için kullanılan yapılardır.
+2 tür yaklaşım vardır.
+<br>
+
+* **Template-Driven Form Approach**
+Angular form yapısı oluşturmayı sağlar ve form elemanlarını ngModel direcive'i ile işaretleyerek çalışmaktadır.
+Formun tasarımı ve yapılandırılması template üzerinden gerçekleştirilir.
+
+<br>
+
+* **Model-Driven/Reactive Form Apporach**
+Template-driven forma göre daha complex işlemler için uygundur.
+Formun temel mantığı component üzerinde bir object olarak tanımlanır ve bu obje ile HTML'deki form etiketlerine bind edilir.
+En önemli farkı form elemanları ve bu form elemanlarındaki verilerin değişiklikleri ilgili nesne tarafından reaktif(dinamik) şekilde takip edilmesidir.
