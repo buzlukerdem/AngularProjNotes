@@ -11,7 +11,8 @@ import { Component } from '@angular/core';
   <!-- <div *appTest="array, let harf; let i = index">{{harf}} - {{i}}</div> -->
   <!-- <div *ngFor="let name of names | keyvalue ">{{name.key}} - {{name.value}}</div> -->
   <!-- <app-parent></app-parent> -->
-   <app-testing data="input">content deger</app-testing>
+  <!-- <app-testing data="input">content deger</app-testing> -->
+   <app-template-form-test></app-template-form-test>
   `,
   standalone: false,
   styleUrl: './app.component.scss'
@@ -19,5 +20,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'myAngularProject';
   // array: string[] = ["A1","B1","C1","D1"]
-  names: Map<number, string> = new Map([[1, 'Erdem'], [2, 'Berkay'], [3, "Demet"]])
+  // names: Map<number, string> = new Map([[1, 'Erdem'], [2, 'Berkay'], [3, "Demet"]])
 }

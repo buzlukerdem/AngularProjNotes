@@ -9,6 +9,7 @@ import { TestPipe } from './pipes/test.pipe';
 import { ParentComponent } from './components/parent/parent.component';
 import { ChildComponent } from './components/child/child.component';
 import { FormsModule } from '@angular/forms';
+import { TemplateFormTestComponent } from './components/testing/template-form-test/template-form-test.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { FormsModule } from '@angular/forms';
     TestPipe,
     ParentComponent,
     ChildComponent,
+    TemplateFormTestComponent,
   ],
   imports: [
     BrowserModule,

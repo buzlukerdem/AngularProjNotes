@@ -504,13 +504,27 @@ Kullanıcılardan veri alabilmek, verisel iletişime girebilmek için kullanıla
 2 tür yaklaşım vardır.
 <br>
 
-* **Template-Driven Form Approach**
+**Template-Driven Form Approach**
 Angular form yapısı oluşturmayı sağlar ve form elemanlarını ngModel direcive'i ile işaretleyerek çalışmaktadır.
 Formun tasarımı ve yapılandırılması template üzerinden gerçekleştirilir.
+Formda tüm davranışlar ve validasyonlar template üzerinden directive'ler ve attribute'lar ile sağlanır.
+
+* **ngForm** directive'i: Formun oluşturulmasını sağlar. Arka planda bir FormGroup nesnesi oluşturur ve temsil eder.
+NgForm propertyleri;
+**1-value**: FormGroup içerisindeki formcontrol nesnesinin değerini elde etmeyi sağlar.
+**2-valid**: Formun geçerli olup olmadığı duruma göre true-false dönderir.
+**3-touched**: Form nesnesinin ngModel ile işaretlenmiş elemanlarından birinde değer girilip girilmediğinin sonucunu bool türde döner.
+**4-submitted**: Formun submit edilip edilmediği sonucunu bool türde döner.
+
+* **ngModel** directive'i: Form içerisinde kullanılacak olan kontrolleri işaretler. Two Way Databinding davranışını da sergiler.
+
+* **ngModelGroup** directive'i: Birden fazla form kontrülünü gruplandırarak kullanmayı sağlar. Gruplandırılan veri ayrı obje olarak elde edilir.
+
 
 <br>
+<br>
 
-* **Model-Driven/Reactive Form Apporach**
+**Model-Driven/Reactive Form Apporach**
 Template-driven forma göre daha complex işlemler için uygundur.
 Formun temel mantığı component üzerinde bir object olarak tanımlanır ve bu obje ile HTML'deki form etiketlerine bind edilir.
 En önemli farkı form elemanları ve bu form elemanlarındaki verilerin değişiklikleri ilgili nesne tarafından reaktif(dinamik) şekilde takip edilmesidir.
