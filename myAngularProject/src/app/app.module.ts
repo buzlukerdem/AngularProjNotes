@@ -8,8 +8,9 @@ import { TestDirective } from './directives/test.directive';
 import { TestPipe } from './pipes/test.pipe';
 import { ParentComponent } from './components/parent/parent.component';
 import { ChildComponent } from './components/child/child.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TemplateFormTestComponent } from './components/testing/template-form-test/template-form-test.component';
+import { ModelDrivenFormTestComponent } from './components/testing/model-driven-form-test/model-driven-form-test.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +21,13 @@ import { TemplateFormTestComponent } from './components/testing/template-form-te
     ParentComponent,
     ChildComponent,
     TemplateFormTestComponent,
+    ModelDrivenFormTestComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

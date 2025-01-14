@@ -528,3 +528,16 @@ NgForm propertyleri;
 Template-driven forma göre daha complex işlemler için uygundur.
 Formun temel mantığı component üzerinde bir object olarak tanımlanır ve bu obje ile HTML'deki form etiketlerine bind edilir.
 En önemli farkı form elemanları ve bu form elemanlarındaki verilerin değişiklikleri ilgili nesne tarafından reaktif(dinamik) şekilde takip edilmesidir.
+Ek olarak formun validasyonel kurallarıyla birlikte yapılandırmalar nesne üzerinden tanımlanabilir.
+
+<br>
+
+* **FormGroup**: Forun kurulmasını sağlar. Form elemanları component class'ında modellenir.
+
+* **FormControlName**: FormGroup nesnesini içerisindeki herhangi bir FormControl'ü form elemanlarından birine bağlamak ve senkronize bir davranış sergilemek için kullanılır. Dinamik şekilde form elemanı değeri değiştiğinde nesnenin de değeri otomatik güncellenecektir.
+
+* **FormGroupName**: ngModelGroup directive'in model-driven-form da karşılığıdır. Form kontrollerini gruplayabilir ve işlevsel olarak yönetmeyi sağlar.
+
+* **ValueChanges**: Formdaki kontrolden birinin değeri değiştiği an tetiklenir.
+
+* **StatusChanges**: Formun geçerlilik durumu değiştiğinde tetiklenir.
