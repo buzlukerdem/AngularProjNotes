@@ -17,6 +17,9 @@ import { Component } from '@angular/core';
   <hr>
   model-reactive
   <app-model-driven-form-test></app-model-driven-form-test> 
+  <hr>
+  validate
+  <app-validate></app-validate>
   
   `,
   standalone: false,

@@ -541,3 +541,44 @@ Ek olarak formun validasyonel kurallarıyla birlikte yapılandırmalar nesne üz
 * **ValueChanges**: Formdaki kontrolden birinin değeri değiştiği an tetiklenir.
 
 * **StatusChanges**: Formun geçerlilik durumu değiştiğinde tetiklenir.
+
+<br>
+
+#### VALIDATION
+* Formdaki veri alanları kullanıcılar tarafından belirtilen kurallara göre girilip, girilmediğinin kontrolü validation ile sağlanır.
+* Form bütünsel olarak doğrulanmadığı sürece Valid durumu false olacaktır. Doğrulandığı takdirde true olacaktır.
+* ReactiveForm modülünde built-in validators gelmektedir.
+**Bunlar**: Min-Max-Required-RequiredTrue-Email-MinMaxLength
+* Kullanılırken formcontrollere uygun propertyler oluşturulur. Doğrulama ve hata mesajları oluşturulan propertyler üzerinden gerçekleştirilir.
+<br>
+
+<h4>Custom Validator</h4>
+Custom validatorlar oluşturulabilmektedir. Oluşturabilmek için ValidatorFn interface'inin imzasına uygun custom validator function oluşturabiliriz.
+
+```ts
+export function capitalLetterValidator(control: AbstractControl): ValidationErrors | null{}
+```
+
+<br>
+<h4>Parametreli Custom Validator</h4>
+Parametreli validator oluşturmak için geriye validatorFn türünden nesne döndürülmelidir.
+
+```ts
+export function parameterCapitalLetterValidator(count: number): ValidatorFn {
+    return (control: AbstractControl): ValidationErrors | null => {}}
+```
+<br>
+Bu kullanım validation'lar sync olarak davranış göstereceklerdir.
+
+<br><br>
+<h4>Async Validator</h4>
+
+**AsyncValidatorFn** interface'i kullanılır ve imza olarak geriye Promise veya Observable türde nesne dönderir.
+Bu yapı genellikle doğrulamanın dış servisten alındığı ve süresinin tahmin edilemediği durumlarda kullanılır.
+
+<br>
+<h4>Dinamik Olarak Validator Ekleme-Silme</h4>
+
+**SetValidators** ve **setAsyncValidators** metotları ile ekleme işlemi gerçekleştirebilmekteyiz. Bu kullanım ile önceki eklenen validator'lar kaldırılmış olacaktır.
+
+**ClearValidators** metodu ile tüm validasyonları kaldırabiliriz.

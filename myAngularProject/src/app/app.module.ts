@@ -11,6 +11,7 @@ import { ChildComponent } from './components/child/child.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TemplateFormTestComponent } from './components/testing/template-form-test/template-form-test.component';
 import { ModelDrivenFormTestComponent } from './components/testing/model-driven-form-test/model-driven-form-test.component';
+import { ValidateComponent } from './components/validate/validate.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ModelDrivenFormTestComponent } from './components/testing/model-driven-
     ChildComponent,
     TemplateFormTestComponent,
     ModelDrivenFormTestComponent,
+    ValidateComponent,
   ],
   imports: [
     BrowserModule,
