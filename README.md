@@ -625,3 +625,27 @@ Bir sınıfın servis olacağını belirtmek için @Injectable decorator'ı kull
 <br>
 
 **Provide Etme**
+Provide edilecek olan servisi temseil edecek ve ihtiyaç durumunda erişip kullanılacak olan DI TOKEN'dır
+Bir servisi provide ederken üç tür token türü kullanabiliriz.
+* **Type Token**: Herhangi bir servis türü referans'ı token olarak kullanılır. Constructor da inject edilirken provide'da tanımlanan token adıyla erişilir.
+
+```js
+providers: [{provide: TestService, useClass: TestService}]
+```
+<br>
+
+* **String Token**: Provide edilirken metinsel değer ile token belirtilir. Constructor da inject edilirken @Inject decorator'u ile kullanılması gerekir.
+
+```js
+providers: [{provide: "TestService", useClass: TestService}]
+```
+<br>
+
+* **Injection Token**: Aynı isimde metinsel token'larda çakışma olmaması için ayrı bir .ts dosyasında tokenlar oluşturulur. Bunlar benzersiz tokenlar olur.
+```js
+export const testServiceIT : InjectionToken<any> = new InjectionToken("Desc");
+```
+
+```js
+providers: [{provide: testServiceIT, useClass: TestService}]
+```
