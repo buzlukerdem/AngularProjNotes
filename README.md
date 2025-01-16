@@ -33,7 +33,7 @@ Derlendiğinde JavaScript çıktısı verecektir.
 
 Angular Mimarisinin çalışma mantığı MVC tasarımına dayanmaktadır.
 
-<h4>Angular Ana Yapıtaşları</h4>
+<h3>Angular Ana Yapıtaşları</h3>
 <br>
 
 * **MODULES**
@@ -187,7 +187,7 @@ Script, html kodları handle edilmeden en sade haliyle yansıtılırlar.
 
 <br><br>
 
-<h4>DIRECTIVES</h4>
+<h3>DIRECTIVES</h3>
 Html elemanlarına ekstra özellik ve davranış eklemeyi sağlar.
 Directive selector'u ile bu davranış kazandırılır.<br>
 <br>
@@ -317,7 +317,7 @@ Oluşturulan directive classında ctor içerisinde templateRef ve viewContainerR
   ```
 <br>
 
-<h4>PIPES</h4>
+<h3>PIPES</h3>
 Verinin html de gösterilirken görüntülenme şeklinde değişiklik için kullanılır.
 <br>
 <br>
@@ -367,7 +367,7 @@ Built-in olarak birçok pipe vardır.
 
 <br>
 
-##### Custom Pipes
+#### Custom Pipes
 Custom pipe oluşturma talimatı;
 ```
 ng g p pipes/pipeName
@@ -398,7 +398,7 @@ Parent component den child component e veri göndermek için kullanılır. Child
 Child component den parent component e veri göndermek için kullanılır. Parent'a gönderilecek veri @Output ile işaretlenir ve EventEmitter ile bir event ile veriyi gönderir.<br>
 <br>
 
-#### Component Life Cycle
+### Component Life Cycle
 Angular componentinin ilk oluştuğu andan imha edileceği ana kadar ki süreçte belirli noktalarda çalışacak davranışsal metot lar vardır.
 Bu metotlar componentin farklı aşamalarında çalışırlar ve birbirlerinden farklı görevleri yerine getirirler. Bu metotlar kendi interfaceleri tarafından component class'a implement edilerek kullanılabilirler.
 
@@ -499,7 +499,7 @@ export class TestingComponent implements OnDestroy{
 
 <br>
 
-#### Angular Forms
+## Angular Forms
 Kullanıcılardan veri alabilmek, verisel iletişime girebilmek için kullanılan yapılardır.
 2 tür yaklaşım vardır.
 <br>
@@ -544,7 +544,7 @@ Ek olarak formun validasyonel kurallarıyla birlikte yapılandırmalar nesne üz
 
 <br>
 
-#### VALIDATION
+## VALIDATION
 * Formdaki veri alanları kullanıcılar tarafından belirtilen kurallara göre girilip, girilmediğinin kontrolü validation ile sağlanır.
 * Form bütünsel olarak doğrulanmadığı sürece Valid durumu false olacaktır. Doğrulandığı takdirde true olacaktır.
 * ReactiveForm modülünde built-in validators gelmektedir.
@@ -582,3 +582,46 @@ Bu yapı genellikle doğrulamanın dış servisten alındığı ve süresinin ta
 **SetValidators** ve **setAsyncValidators** metotları ile ekleme işlemi gerçekleştirebilmekteyiz. Bu kullanım ile önceki eklenen validator'lar kaldırılmış olacaktır.
 
 **ClearValidators** metodu ile tüm validasyonları kaldırabiliriz.
+<br><br>
+
+## Angular - Dependency Injection
+Angular mimarisinde dahili olarak gelmektedir.
+Dependency injection aktörleri;
+* Consumer: Bağımlı olan sınıftır.
+* Dependecy: Bağımlı olunan servistir.
+* Injection Token: Bağımlı olunan servis sınıfının referansıdır.
+* Provider: Injection Token'ın yerleştirildiği yerdir.
+* Injector: Servisleri ihtiyaç noktalarında Injection Token ile inject etmeyi sağlar.
+
+Inject ederken component class'ının constructor metotunda ioc üzerinden servis talep edilir.
+```ts
+export class AppComponent{
+  constructor(private service:Service){}
+}
+```
+
+Bir servisi provider'a eklemeksizin direkt enject edebiliriz. Bunun için ilgili servisin @Injectable decorator'ü ile işaretlenmesi gerekir ve providedIn özelliğine 'root' değeri verilir. Bu sayede servis uygulamanın herhangi bir noktasından inject edilebilir bir davranış gösterecektir.
+
+```ts
+@Injectable({
+  providedIn: "root"
+})
+export class Service{
+  //...
+}
+```
+<br>
+
+**Injectable Decorator**
+Bir sınıfın servis olacağını belirtmek için @Injectable decorator'ı kullanılır. Servis sınıfının da kendi içerisinde başka bir servis'e bağımlılığı var ise onu provider'a eklemek için kesinlikle @Injectable ile işaretlememiz gerekir. Başka bir servis'e bağımlılığı olsun olmasın bu decorator ile işaretlemede bulunuruz.
+
+<br>
+
+**providedIn Parameter**
+* Root: İlgili servisin singleton(tek bir nesne) olarak eklenmesini sağlar.
+* Any: İlgili servisin birden fazla nesnesinin üretilebilir olmasını sağlar.
+* Platform: platform bağımsız uygulamalar için tasarlnamıştır. 
+
+<br>
+
+**Provide Etme**
