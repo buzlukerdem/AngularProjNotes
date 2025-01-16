@@ -12,15 +12,17 @@ import { Component } from '@angular/core';
   <!-- <div *ngFor="let name of names | keyvalue ">{{name.key}} - {{name.value}}</div> -->
   <!-- <app-parent></app-parent> -->
   <!-- <app-testing data="input">content deger</app-testing> -->
-  template
+  <!-- template
   <app-template-form-test></app-template-form-test>
   <hr>
   model-reactive
   <app-model-driven-form-test></app-model-driven-form-test> 
   <hr>
   validate
-  <app-validate></app-validate>
-  
+  <app-validate></app-validate> -->
+  <app-createproduct></app-createproduct>
+  <hr>
+  <app-listproduct></app-listproduct>
   `,
   standalone: false,
   styleUrl: './app.component.scss'

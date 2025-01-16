@@ -12,6 +12,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TemplateFormTestComponent } from './components/testing/template-form-test/template-form-test.component';
 import { ModelDrivenFormTestComponent } from './components/testing/model-driven-form-test/model-driven-form-test.component';
 import { ValidateComponent } from './components/validate/validate.component';
+import { CreateproductComponent } from './components/createproduct/createproduct.component';
+import { ListproductComponent } from './components/listproduct/listproduct.component';
+import { ProductComponent } from './models/product/product.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,9 @@ import { ValidateComponent } from './components/validate/validate.component';
     TemplateFormTestComponent,
     ModelDrivenFormTestComponent,
     ValidateComponent,
+    CreateproductComponent,
+    ListproductComponent,
+    ProductComponent,
   ],
   imports: [
     BrowserModule,
