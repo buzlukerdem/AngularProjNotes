@@ -20,7 +20,8 @@ import { Component } from '@angular/core';
   <hr>
   validate
   <app-validate></app-validate> -->
-
+  <app-createname></app-createname>
+  <app-readname></app-readname>
   `,
   standalone: false,
   styleUrl: './app.component.scss'
