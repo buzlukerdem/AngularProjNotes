@@ -665,3 +665,43 @@ Oluşturulan servis default injectable decorator'ü ile işaretlenir ve provideI
 Servisler componentler arası iletişimi de sağlayabilmektedir.
 
 
+<ba><br>
+
+## ROUTING
+Built-in gelen angular router modülü ile kullanılmaktadır.
+Bu modül;
+
+* Sayfalar arasında yönlendirmeleri gerçekleştirir.
+* URL üzerinden belirli bor component'e gitmeyi sağlar.
+* Tarayıcıda ileri ve geri butonlarını aktifleştirmeyi sağlar.
+* Rotalar üzerinde yetki kontrolünü oluşturmayı sağlar.
+
+Bileşenleri;
+ * RouterService: Componentler arasında geçişleri ve ileri geri butonlarını aktifleştirmede kullanılır.
+ * Route: Rotanın belirtilmesini sağlar. 
+ * Routes: Tüm rotaların tutulduğu dizidir.
+ * Router Outlet: View'in hangi alanına gösterileceğini sağlar.
+ * RouterLink directive: A tagine rotayı bağlar.
+ 
+<br>
+
+Routes dizisine route tanımlama
+```js
+const routes: Routes = [
+  {path: "", redirectTo: "/home", pathMatch: "full" },
+  {path: "home", component: HomeComponent},
+  {path: "about", component: AboutComponent},
+  {path: "contact", component: ContactComponent}
+];
+```
+
+<br>
+
+Router linkler component içerisinde;
+
+```js
+ <a routerLink="home">Home</a> |
+  <a routerLink="about">About</a> |
+  <a routerLink="contact">Contact</a> |
+```
+

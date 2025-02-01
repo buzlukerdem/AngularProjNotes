@@ -10,6 +10,11 @@ export class NameService {
 
   AddName(name:string){
     this.names.push(name)
+    console.log(this.names.length)
+  }
+  RemoveName(){
+    this.names.pop();
+    console.log(this.names.length)
   }
 
   GetNames() : string[]{

@@ -14,6 +14,10 @@ import { ModelDrivenFormTestComponent } from './components/testing/model-driven-
 import { ValidateComponent } from './components/validate/validate.component';
 import { CreatenameComponent } from './components/createname/createname.component';
 import { ReadnameComponent } from './components/readname/readname.component';
+import { HomeComponent } from './components/home/home.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { AboutComponent } from './components/about/about.component';
+import { ComputerpiecesComponent } from './components/computerpieces/computerpieces.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +32,10 @@ import { ReadnameComponent } from './components/readname/readname.component';
     ValidateComponent,
     CreatenameComponent,
     ReadnameComponent,
+    HomeComponent,
+    ContactComponent,
+    AboutComponent,
+    ComputerpiecesComponent,
   ],
   imports: [
     BrowserModule,

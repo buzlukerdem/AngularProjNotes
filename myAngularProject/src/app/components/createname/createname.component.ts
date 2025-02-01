@@ -7,6 +7,7 @@ import { NameService } from '../../services/name.service';
   template: `
   <input type="text" placeholder="name" #txtname><br>
   <button (click)="createName(txtname.value)">create</button>
+  <button (click)="deleteName()">delete</button>
   `
 })
 export class CreatenameComponent {
@@ -14,5 +15,8 @@ export class CreatenameComponent {
 
   createName(name: string) {
     this.nameService.AddName(name);
+  }
+  deleteName(){
+    this.nameService.RemoveName();
   }
 }
